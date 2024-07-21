@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionsHelper.cs" />
+    <Compile Include="ConnectionStructure.cs" />
     <Compile Include="CreateConnection.cs">
       <SubType>Form</SubType>
     </Compile>
