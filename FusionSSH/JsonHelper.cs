@@ -32,5 +32,23 @@ namespace FusionSSH
                 return null;
             }
         }
+
+        /// <summary>
+        /// Validates if JSON has correct format.
+        /// </summary>
+        /// <param name="jsonString">JSON you want validate</param>
+        /// <returns>Returns boolean if is JSON format correct</returns>
+        public static bool ValidateJSON(string jsonString)
+        {
+            try
+            {
+                JToken.Parse(jsonString);
+                return true;
+            }
+            catch (JsonReaderException)
+            {
+                return false;
+            }
+        }
     }
 }
