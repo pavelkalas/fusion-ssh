@@ -1,6 +1,6 @@
 ﻿namespace FusionSSH
 {
-    internal class ConnectionStructure
+    public class ConnectionStructure
     {
         /// <summary>
         /// Identifier for connection.
@@ -20,7 +20,7 @@
         /// <summary>
         /// Connection port
         /// </summary>
-        public int ConnectionPort;
+        public string ConnectionPort;
 
         /// <summary>
         /// Connection user.
