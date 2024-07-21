@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateConnection.Designer.cs">
+      <DependentUpon>CreateConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="DpapiHelper.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MainWindow.cs">
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateConnection.resx">
+      <DependentUpon>CreateConnection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
