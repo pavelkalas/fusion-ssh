@@ -34,6 +34,7 @@
             this.DeleteConnectionBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CreateNewConnectionBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +44,7 @@
             this.ConnectionsListView.HideSelection = false;
             this.ConnectionsListView.Location = new System.Drawing.Point(6, 19);
             this.ConnectionsListView.Name = "ConnectionsListView";
-            this.ConnectionsListView.Size = new System.Drawing.Size(476, 199);
+            this.ConnectionsListView.Size = new System.Drawing.Size(565, 199);
             this.ConnectionsListView.TabIndex = 0;
             this.ConnectionsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -59,7 +60,7 @@
             // 
             // EditConnectionBtn
             // 
-            this.EditConnectionBtn.Location = new System.Drawing.Point(204, 19);
+            this.EditConnectionBtn.Location = new System.Drawing.Point(290, 19);
             this.EditConnectionBtn.Name = "EditConnectionBtn";
             this.EditConnectionBtn.Size = new System.Drawing.Size(130, 27);
             this.EditConnectionBtn.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // DeleteConnectionBtn
             // 
-            this.DeleteConnectionBtn.Location = new System.Drawing.Point(340, 19);
+            this.DeleteConnectionBtn.Location = new System.Drawing.Point(426, 19);
             this.DeleteConnectionBtn.Name = "DeleteConnectionBtn";
             this.DeleteConnectionBtn.Size = new System.Drawing.Size(130, 27);
             this.DeleteConnectionBtn.TabIndex = 3;
@@ -83,28 +84,39 @@
             this.groupBox1.Controls.Add(this.ConnectionsListView);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(488, 283);
+            this.groupBox1.Size = new System.Drawing.Size(578, 283);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connections list";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.CreateNewConnectionBtn);
             this.groupBox2.Controls.Add(this.ConnectToSelectedBtn);
             this.groupBox2.Controls.Add(this.DeleteConnectionBtn);
             this.groupBox2.Controls.Add(this.EditConnectionBtn);
             this.groupBox2.Location = new System.Drawing.Point(6, 224);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(476, 53);
+            this.groupBox2.Size = new System.Drawing.Size(565, 53);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions";
+            // 
+            // CreateNewConnectionBtn
+            // 
+            this.CreateNewConnectionBtn.Location = new System.Drawing.Point(154, 19);
+            this.CreateNewConnectionBtn.Name = "CreateNewConnectionBtn";
+            this.CreateNewConnectionBtn.Size = new System.Drawing.Size(130, 27);
+            this.CreateNewConnectionBtn.TabIndex = 4;
+            this.CreateNewConnectionBtn.Text = "Create connection";
+            this.CreateNewConnectionBtn.UseVisualStyleBackColor = true;
+            this.CreateNewConnectionBtn.Click += new System.EventHandler(this.CreateNewConnectionBtn_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 303);
+            this.ClientSize = new System.Drawing.Size(602, 305);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -125,6 +137,7 @@
         private System.Windows.Forms.Button DeleteConnectionBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button CreateNewConnectionBtn;
     }
 }
 

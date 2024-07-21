@@ -23,5 +23,10 @@ namespace FusionSSH
         {
 
         }
+
+        private void CreateNewConnectionBtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
