@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ConnectionsListView = new System.Windows.Forms.ListView();
             this.ConnectToSelectedBtn = new System.Windows.Forms.Button();
             this.EditConnectionBtn = new System.Windows.Forms.Button();
@@ -119,6 +120,7 @@
             this.ClientSize = new System.Drawing.Size(602, 305);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
