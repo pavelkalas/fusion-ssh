@@ -12,9 +12,21 @@ namespace FusionSSH
         public MainWindow()
         {
             InitializeComponent();
+        }
 
+        private void OnAppLoad(object sender, EventArgs e)
+        {
             connectionHelper = new ConnectionsHelper(connectionDatabase);
             connectionHelper.LoadDatabase();
+
+            foreach (var connections in connectionHelper.GetConnections())
+            {
+                ListViewItem item = new ListViewItem(connections.ConnectionId.ToString());
+                item.SubItems.Add(connections.ConnectionName);
+                item.SubItems.Add(connections.ConnectionHost);
+                item.SubItems.Add(connections.ConnectionPort);
+                ConnectionsListView.Items.Add(item);
+            }
         }
 
         private void ConnectToSelectedBtn_Click(object sender, System.EventArgs e)

@@ -36,18 +36,30 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CreateNewConnectionBtn = new System.Windows.Forms.Button();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ConnectionsListView
             // 
+            this.ConnectionsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.ConnectionsListView.FullRowSelect = true;
+            this.ConnectionsListView.GridLines = true;
             this.ConnectionsListView.HideSelection = false;
-            this.ConnectionsListView.Location = new System.Drawing.Point(6, 19);
+            this.ConnectionsListView.Location = new System.Drawing.Point(12, 21);
             this.ConnectionsListView.Name = "ConnectionsListView";
-            this.ConnectionsListView.Size = new System.Drawing.Size(565, 199);
+            this.ConnectionsListView.Size = new System.Drawing.Size(550, 197);
             this.ConnectionsListView.TabIndex = 0;
             this.ConnectionsListView.UseCompatibleStateImageBehavior = false;
+            this.ConnectionsListView.View = System.Windows.Forms.View.Details;
             // 
             // ConnectToSelectedBtn
             // 
@@ -113,18 +125,39 @@
             this.CreateNewConnectionBtn.UseVisualStyleBackColor = true;
             this.CreateNewConnectionBtn.Click += new System.EventHandler(this.CreateNewConnectionBtn_Click);
             // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 45;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Connection name";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "IP Address";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Port";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 305);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FusionSSH";
+            this.Load += new System.EventHandler(this.OnAppLoad);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -140,6 +173,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button CreateNewConnectionBtn;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
 
