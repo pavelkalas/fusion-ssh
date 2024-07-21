@@ -25,9 +25,17 @@ namespace FusionSSH
         /// <returns>Deobfuscated string</returns>
         public static string Unprotect(string protectedData)
         {
-            byte[] protectedDataBytes = Convert.FromBase64String(protectedData);
-            byte[] dataBytes = ProtectedData.Unprotect(protectedDataBytes, null, DataProtectionScope.CurrentUser);
-            return Encoding.UTF8.GetString(dataBytes);
+            try
+            {
+                byte[] protectedDataBytes;
+                protectedDataBytes = Convert.FromBase64String(protectedData);
+                byte[] dataBytes = ProtectedData.Unprotect(protectedDataBytes, null, DataProtectionScope.CurrentUser);
+                return Encoding.UTF8.GetString(dataBytes);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
