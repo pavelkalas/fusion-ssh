@@ -99,11 +99,11 @@ namespace FusionSSH
         }
 
         /// <summary>
-        /// Edits a connection by provided connection name.
+        /// Edits or delete a connection by provided connection name.
         /// </summary>
-        /// <param name="connectionName"></param>
-        /// <param name="jsonString"></param>
-        public void EditConnection(string connectionName, string jsonString)
+        /// <param name="connectionName">Name of the connection</param>
+        /// <param name="jsonString">New JSON string</param>
+        public void EditConnection(string connectionName, string jsonString, bool delete = false)
         {
             List<string> jsonContent = new List<string>();
 
@@ -117,7 +117,9 @@ namespace FusionSSH
                 }
             }
 
-            jsonContent.Add(jsonString);
+
+            if (!delete)
+                jsonContent.Add(jsonString);
 
             File.WriteAllLines(connectionDatabase, jsonContent);
         }
