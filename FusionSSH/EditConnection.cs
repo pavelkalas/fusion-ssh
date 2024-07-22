@@ -16,5 +16,15 @@ namespace FusionSSH
         {
             InitializeComponent();
         }
+
+        private void ConfirmEditBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelEditBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
