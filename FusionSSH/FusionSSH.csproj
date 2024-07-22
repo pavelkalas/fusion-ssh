@@ -62,6 +62,12 @@
       <DependentUpon>CreateConnection.cs</DependentUpon>
     </Compile>
     <Compile Include="DpapiHelper.cs" />
+    <Compile Include="EditConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditConnection.Designer.cs">
+      <DependentUpon>EditConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateConnection.resx">
       <DependentUpon>CreateConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditConnection.resx">
+      <DependentUpon>EditConnection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
