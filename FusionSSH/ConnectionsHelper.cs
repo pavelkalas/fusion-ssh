@@ -98,9 +98,28 @@ namespace FusionSSH
             });
         }
 
-        public void EditConnection(string connectionName)
+        /// <summary>
+        /// Edits a connection by provided connection name.
+        /// </summary>
+        /// <param name="connectionName"></param>
+        /// <param name="jsonString"></param>
+        public void EditConnection(string connectionName, string jsonString)
         {
+            List<string> jsonContent = new List<string>();
 
+            string[] databaseContent = File.ReadAllLines(connectionDatabase);
+
+            foreach (var jsonDatabase in databaseContent)
+            {
+                if (JsonHelper.ValidateJSON(jsonDatabase) && JsonHelper.ParseValueFromKey("ConnectionName", jsonDatabase) != connectionName)
+                {
+                    jsonContent.Add(jsonDatabase);
+                }
+            }
+
+            jsonContent.Add(jsonString);
+
+            File.WriteAllLines(connectionDatabase, jsonContent);
         }
 
         /// <summary>
