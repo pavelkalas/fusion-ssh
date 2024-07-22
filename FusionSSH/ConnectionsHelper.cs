@@ -87,9 +87,6 @@ namespace FusionSSH
             string connectionPass = JsonHelper.ParseValueFromKey("ConnectionPass", connectionRecord);
             string connectionUser = JsonHelper.ParseValueFromKey("ConnectionUser", connectionRecord);
 
-            // parsing the ID as integer (for able to increment)
-            int.TryParse(JsonHelper.ParseValueFromKey("ConnectionId", connectionRecord), out int connectionId);
-            
             // adds connections into list.
             connectionsList.Add(new ConnectionStructure
             {
@@ -97,9 +94,13 @@ namespace FusionSSH
                 ConnectionHost = connectionHost,
                 ConnectionPort = connectionPort,
                 ConnectionPass = connectionPass,
-                ConnectionUser = connectionUser,
-                ConnectionId = connectionId
+                ConnectionUser = connectionUser
             });
+        }
+
+        public void EditConnection(string connectionName)
+        {
+
         }
 
         /// <summary>
