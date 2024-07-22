@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace FusionSSH
@@ -71,7 +72,26 @@ namespace FusionSSH
         /// <param name="e"></param>
         private void DeleteConnectionBtn_Click(object sender, System.EventArgs e)
         {
+            List<string> selectedConnectionNames = new List<string>();
 
+            foreach (ListViewItem selectedItem in ConnectionsListView.SelectedItems)
+            {
+                string connectionName = selectedItem.SubItems[1].Text;
+                selectedConnectionNames.Add(connectionName);
+            }
+
+            if (selectedConnectionNames.Count > 0)
+            {
+                foreach (string name in selectedConnectionNames)
+                {
+                    connectionHelper.EditConnection(name, null, true);
+                    LoadConnections();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No items were selected!", "FusionSSH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -81,8 +101,27 @@ namespace FusionSSH
         /// <param name="e"></param>
         private void EditConnectionBtn_Click(object sender, System.EventArgs e)
         {
-            new EditConnection(connectionHelper, "192.168.100.3").ShowDialog();
-            LoadConnections();
+            List<string> selectedConnectionNames = new List<string>();
+
+            foreach (ListViewItem selectedItem in ConnectionsListView.SelectedItems)
+            {
+                string connectionName = selectedItem.SubItems[1].Text;
+                selectedConnectionNames.Add(connectionName);
+            }
+
+            if (selectedConnectionNames.Count == 1)
+            {
+                new EditConnection(connectionHelper, selectedConnectionNames[0]).ShowDialog();
+                LoadConnections();
+            }
+            else if (selectedConnectionNames.Count == 0)
+            {
+                MessageBox.Show("No items were selected!", "FusionSSH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("You cannot edit more than one connection!", "FusionSSH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
