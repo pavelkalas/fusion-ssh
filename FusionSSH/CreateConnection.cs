@@ -53,13 +53,21 @@ namespace FusionSSH
                 ipAddress = connection; // whole input as IP address
             }
 
+            // checks if is password really correct
+            if (passWord != passWordAgain)
+            {
+                MessageBox.Show("Password and password again are not same!");
+                return;
+            }
+
             // creating JSON object
             var connectionString = new
             {
                 ConnectionUser = userName,
                 ConnectionName = ipAddress,
                 ConnectionPort = port,
-                ConnectionHost = ipAddress
+                ConnectionHost = ipAddress,
+                ConnectionPass = DpapiHelper.Protect(passWord)
             };
 
             // generate JSON string from object above.
