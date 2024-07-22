@@ -28,7 +28,6 @@ namespace FusionSSH
         private void OnAppLoad(object sender, EventArgs e)
         {
             connectionHelper = new ConnectionsHelper(connectionDatabase);
-            connectionHelper.LoadDatabase();
 
             LoadConnections();
         }
