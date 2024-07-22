@@ -59,8 +59,7 @@ namespace FusionSSH
                 ConnectionUser = userName,
                 ConnectionName = ipAddress,
                 ConnectionPort = port,
-                ConnectionHost = ipAddress,
-                ConnectionId = connectionsHelper.GetRecordsCount() + 1,
+                ConnectionHost = ipAddress
             };
 
             // generate JSON string from object above.
