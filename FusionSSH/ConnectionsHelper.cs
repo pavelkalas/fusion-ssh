@@ -32,6 +32,9 @@ namespace FusionSSH
             if (!File.Exists(connectionDatabase))
                 CreateDatabase();
 
+            if (connectionsList.Count > 0)
+                connectionsList.Clear();
+
             List<string> jsonConnectionRecords = new List<string>();
 
             string[] databaseRecords = GetDatabaseRecords();
