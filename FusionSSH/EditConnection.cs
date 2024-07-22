@@ -24,6 +24,18 @@ namespace FusionSSH
 
             this.connectionHelper = connectionHelper;
             this.connectionName = connectionName;
+
+            foreach (var connections in connectionHelper.GetConnections())
+            {
+                if (connections.ConnectionName == connectionName)
+                {
+                    UserNameTxt.Text = connections.ConnectionUser;
+                    PasswordAgainTxt.Text = DpapiHelper.Unprotect(connections.ConnectionPass);
+                    PasswordTxt.Text = DpapiHelper.Unprotect(connections.ConnectionPass);
+                    HostAndPortTxt.Text = (connections.ConnectionPort == "22") ? connections.ConnectionHost : connections.ConnectionHost + ":" + connections.ConnectionPort;
+                    break;
+                }
+            }
         }
 
         private void ConfirmEditBtn_Click(object sender, EventArgs e)
