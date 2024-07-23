@@ -16,6 +16,8 @@ namespace FusionSSH
         /// </summary>
         private ConnectionsHelper connectionHelper;
 
+        private SshHelper sshHelper;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -62,7 +64,27 @@ namespace FusionSSH
         /// <param name="e"></param>
         private void ConnectToSelectedBtn_Click(object sender, System.EventArgs e)
         {
+            List<string> selectedConnectionNames = new List<string>();
 
+            foreach (ListViewItem selectedItem in ConnectionsListView.SelectedItems)
+            {
+                string connectionName = selectedItem.SubItems[1].Text;
+                selectedConnectionNames.Add(connectionName);
+            }
+
+            if (selectedConnectionNames.Count == 1)
+            {
+                sshHelper = new SshHelper(connectionHelper, selectedConnectionNames[0]);
+                sshHelper.Connect();
+            }
+            else if (selectedConnectionNames.Count == 0)
+            {
+                MessageBox.Show("No items were selected!", "FusionSSH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("You cannot join more than one ssh!", "FusionSSH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
