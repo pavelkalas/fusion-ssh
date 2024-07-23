@@ -16,7 +16,6 @@ namespace FusionSSH
         private ConnectionsHelper connectionHelper;
 
         private string connectionName;
-        private string jsonData;
 
         public EditConnection(ConnectionsHelper connectionHelper, string connectionName)
         {
