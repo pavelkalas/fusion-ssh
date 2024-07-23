@@ -80,7 +80,7 @@ namespace FusionSSH
         {
             if (canConnect)
             {
-
+                new SshWindow(UserName, Password, IpAddress, Port).ShowDialog();
             }
         }
 
